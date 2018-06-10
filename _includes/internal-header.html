@@ -1,14 +1,19 @@
         <header class="site-header">
-            <nav>
-                <ul>
-                    <li><a href="{{ site.baseurl }}/">Home</a></li>
-                    <li {% if page.module == "one" %}class="active"{% endif %} ><a {% if page.module == "one" %}class="active"{% endif %} href="{{ site.baseurl }}/modules/">Module 1</a></li>
-                    <li {% if page.module == "two" %}class="active"{% endif %} ><a {% if page.module == "two" %}class="active"{% endif %} href="{{ site.baseurl }}/modules/module2.html">Module 2</a></li>
-                    <li {% if page.module == "three" %}class="active"{% endif %} ><a {% if page.module == "three" %}class="active"{% endif %} href="{{ site.baseurl }}/modules/module3.html">Module 3</a></li>
-                </ul>
-            </nav>
             <div class="heading">
-                <div class="siteHeading">Threats to biodiversity and protection and restoration of biodiversity </div>
+                <div class="siteHeading"><a href="{{ site.baseurl }}/">{{ site.siteHeading }}</a></div>
                 <p>for VCE Biology</p>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li><a {% if page.parent == "sequence-one" %}class="active"{% endif %} href="{{ site.baseurl }}/modules/">Modules</a>
+                        <ul class="sub-menu {% if page.parent == "sequence-one" %}active{% endif %}">
+                            <li><a {% if page.module == "one" %}class="current"{% endif %} href="{{ site.baseurl }}//modules/index.html">Case Study 1</a></li>
+                            <li><a {% if page.module == "two" %}class="current"{% endif %} href="{{ site.baseurl }}//modules/module2.html">Case Study 2</a></li>
+                            <li><a {% if page.module == "three" %}class="current"{% endif %} href="{{ site.baseurl }}//modules/module3.html">Case Study 3</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </header>
